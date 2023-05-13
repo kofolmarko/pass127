@@ -1,1 +1,12 @@
-<p>pattern works!</p>
+<div class="pattern-lock">
+	<div *ngFor="let row of rows" class="pattern-lock-row">
+		<div
+			*ngFor="let col of cols"
+			class="pattern-lock-cell"
+			[ngClass]="{ selected: isSelected(row, col) }"
+			(mousedown)="onCellDown(row, col)"
+			(mouseenter)="onCellEnter(row, col)"
+			(mouseup)="onCellUp()">
+		</div>
+	</div>
+</div>

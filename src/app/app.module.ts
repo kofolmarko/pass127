@@ -12,21 +12,21 @@ import { PatternComponent } from './components/pattern/pattern.component';
 import { SpotifyComponent } from './components/spotify/spotify.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    DashboardComponent,
-    PopupComponent,
-    TextgridComponent,
-    PatternComponent,
-    SpotifyComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-	FormsModule,
- BrowserAnimationsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		DashboardComponent,
+		PopupComponent,
+		TextgridComponent,
+		PatternComponent,
+		SpotifyComponent,
+	],
+	imports: [
+		BrowserModule,
+		AppRoutingModule,
+		FormsModule,
+		BrowserAnimationsModule,
+	],
+	providers: [],
+	bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
