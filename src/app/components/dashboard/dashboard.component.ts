@@ -9,6 +9,8 @@ import { PopupComponent } from '../popup/popup.component';
 })
 export class DashboardComponent {
 
+	showPopup: boolean = false;
+
 	constructor() {}
 
 	items = [
