@@ -7,21 +7,33 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { PopupComponent } from './components/popup/popup.component';
+import { FormsModule } from '@angular/forms';
+import { TextgridComponent } from './components/textgrid/textgrid.component';
+import { PatternComponent } from './components/pattern/pattern.component';
+import { SpotifyComponent } from './components/spotify/spotify.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
-    MatCheckboxModule,
-    MatCardModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		DashboardComponent,
+		PopupComponent,
+		TextgridComponent,
+		PatternComponent,
+		SpotifyComponent,
+	],
+	imports: [
+		BrowserModule,
+		AppRoutingModule,
+		FormsModule,
+		BrowserAnimationsModule,
+		MatButtonModule,
+		MatCheckboxModule,
+		MatCardModule
+	],
+	providers: [],
+	bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
