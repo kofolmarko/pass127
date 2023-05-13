@@ -15,6 +15,10 @@ export class PopupComponent {
 		console.log(pattern)
 	}
 
+	addTextGrid(inputs: any) {
+		console.log(inputs)
+	}
+
 	getHashedValue(): void {
 		this.password = this.hashService.hash('input params');
 	}

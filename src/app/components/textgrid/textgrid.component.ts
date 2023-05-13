@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
 	selector: 'app-textgrid',
@@ -8,7 +8,9 @@ import { Component } from '@angular/core';
 export class TextgridComponent {
 	inputFields: string[] = ['', '', '', '', '', '', '', ''];
 
-  logInputs() {
-    console.log(this.inputFields);
-  }
+	@Output() onComplete = new EventEmitter<string[]>();
+
+	logInputs() {
+		this.onComplete.emit(this.inputFields);
+	}
 }
