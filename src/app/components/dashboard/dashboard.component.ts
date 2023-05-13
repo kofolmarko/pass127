@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
 import { PopupComponent } from '../popup/popup.component';
 
 @Component({
