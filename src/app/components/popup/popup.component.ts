@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HashService } from 'src/app/services/hash.service';
 
 @Component({
   selector: 'app-popup',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./popup.component.scss']
 })
 export class PopupComponent {
+	private password: string = '';
 
+	constructor(
+		private hashService: HashService
+	) { }
+
+	getHashedValue(): void {
+		this.password = this.hashService.hash('input params')
+	}
 }
