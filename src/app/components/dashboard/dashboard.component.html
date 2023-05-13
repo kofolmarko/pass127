@@ -1,0 +1,10 @@
+<!-- <button mat-button (click)="openDialog()">Open Popup</button> -->
+
+<h2>Parameters</h2>
+
+<div *ngFor="let item of items">
+  <label>
+    <input type="checkbox" [(ngModel)]="item.checked">
+    {{ item.label }}
+  </label>
+</div>
