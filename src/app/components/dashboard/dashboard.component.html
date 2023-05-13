@@ -7,18 +7,18 @@
 			<div class="parameters-title">Parameters</div>
 			<div *ngFor="let item of items">
 				<label>
-					<input type="checkbox" [(ngModel)]="item.checked" />
+					<mat-checkbox class="checkbox" >Grid text</mat-checkbox>
 					{{ item.label }}
 				</label>
 			</div>
 		</div>
 		<div class="main-content">
-			<button (click)="showPopup = true">Show Popup</button>
+			<button mat-raised-button color="accent" (click)="showPopup = true">Show Popup</button>
 
 			<app-popup *ngIf="showPopup">
 				<h2>Popup Title</h2>
 				<p>Popup content goes here.</p>
-				<button (click)="showPopup = false">Close</button>
+				<button mat-raised-button (click)="showPopup = false">Close</button>
 			</app-popup>
 		</div>
 	</div>
