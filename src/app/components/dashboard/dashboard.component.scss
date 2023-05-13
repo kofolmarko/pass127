@@ -1,0 +1,23 @@
+.content {
+    height: 70%;
+}
+
+.footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: url('https://img.freepik.com/free-vector/pink-watercolor-mountains-background_23-2149244828.jpg?w=1060&t=st=1684001174~exp=1684001774~hmac=d74cce14958ad9a4696239de97eafcb942b41724279ba1fd591349fafdc40d6e');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+	min-width: 200px;
+}
+
+.image {
+    max-height: 100px;
+}
