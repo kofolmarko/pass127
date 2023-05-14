@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { HashService } from 'src/app/services/hash.service';
+import { Clipboard } from '@angular/cdk/clipboard';
 
 @Component({
 	selector: 'app-popup',
@@ -11,14 +12,20 @@ export class PopupComponent implements OnInit {
 	@Output() onClosePopup = new EventEmitter<void>();
 
 	private pattern: string = '';
-	private password: string = '';
+	password: string = '';
 	private gridInputs: string[] = [];
 	activeModals: any[] = [];
 
 	currentModalId: number = 0;
 	currentModal = ''
+	hide = true;
+	generated: boolean = false;
 
-	constructor(private hashService: HashService) {}
+
+	constructor(
+		private hashService: HashService,
+		private clipboard: Clipboard
+	) {}
 
 	ngOnInit(): void {
 		console.log(this.selectedParams)
@@ -60,7 +67,10 @@ export class PopupComponent implements OnInit {
 		if (this.selectedParams.includes('Text Grid')) {
 			this.password += this.hashService.processTextgrid(this.gridInputs);
 		}
-		console.log(this.password);
-		this.onClose();
+		this.generated = true;
+	}
+
+	copyPassword() {
+		this.clipboard.copy(this.password);
 	}
 }

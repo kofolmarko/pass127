@@ -1,12 +1,10 @@
 <div class="fullscreen-popup">
 	<div class="popup-background" (click)="onClose()"></div>
 	<div class="popup-content">
-		<!-- <button class="close-btn" mat-icon-button (click)="onClose()">
-			<mat-icon>close</mat-icon>
-		</button> -->
+		<h2 *ngIf="currentModalId === selectedParams.length && !generated">Your CapyCapyCode is ready to be generated!</h2>
 		<app-pattern (onComplete)="addPattern($event)" *ngIf="isParam('Pattern')" [ngStyle]="{'display': currentModal==='Pattern' ? 'block' : 'none'}"></app-pattern>
 		<app-textgrid (onComplete)="addTextGrid($event)" *ngIf="isParam('Text Grid')" [ngStyle]="{'display': currentModal==='Text Grid' ? 'block' : 'none'}"></app-textgrid>
-		<div class="pattern-buttons">
+		<div class="pattern-buttons" *ngIf="!generated">
 			<button mat-raised-button color="accent" [disabled]="currentModalId===0" (click)="onChangeModal(false)">
 				Previous
 			</button>
@@ -15,6 +13,22 @@
 			</button>
 			<button mat-raised-button color="primary" (click)="getHashedValue()" *ngIf="currentModalId === selectedParams.length">
 				Generate
+			</button>
+		</div>
+		<div class="post-generated" *ngIf="generated">
+			<h2>Congratulations, your CapyCapyCode is ready! 🎉</h2>
+			<mat-form-field appearance="fill">
+				<mat-label>Password</mat-label>
+				<input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="password">
+				<button mat-icon-button matTooltip="Copy password to clipboard" (click)="copyPassword()">
+				<mat-icon>content_copy</mat-icon>
+				</button>
+				<button mat-icon-button matTooltip="{{hide ? 'Show password' : 'Hide password'}}" (click)="hide = !hide">
+				<mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+				</button>
+			</mat-form-field>
+			<button mat-raised-button color="primary" (click)="onClose()">
+				Close
 			</button>
 		</div>
 	</div>

@@ -78,6 +78,7 @@ export class HashService {
 	}
 
 	processPattern(inputStr: string): string {
+		if (inputStr === '') return inputStr;
 		const charGrid: Array<Array<Array<string>>> =
 		[
 			[	['W', '$', 'D'],

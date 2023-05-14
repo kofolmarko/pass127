@@ -1,16 +1,16 @@
 <div class="main">
 	<div class="content">
-		<div class="Title">Capycode</div>
+		<div class="Title">CapyCapyCode</div>
 		<div class="parameters">
 			<div class="parameters-title">Parameters:</div>
 			<div class="parameters-options" *ngFor="let item of items">
 				<label>
-					<mat-checkbox class="checkbox" (change)="item.checked = $event.checked">{{ item.label }}</mat-checkbox>
+					<input type="checkbox" (change)="item.checked = !item.checked"/>{{ item.label }}
 				</label>
 			</div>
 		</div>
 		<div class="main-content">
-			<button mat-raised-button color="accent" (click)="onShowPopup()">Generate password</button>
+			<button (click)="onShowPopup()">Generate password</button>
 			<app-popup *ngIf="showPopup" [selectedParams]="selectedParams" (onClosePopup)="showPopup = false"></app-popup>
 		</div>
 	</div>
