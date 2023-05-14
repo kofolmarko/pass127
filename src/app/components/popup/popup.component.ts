@@ -15,9 +15,9 @@ export class PopupComponent {
 
 	constructor(private hashService: HashService) {}
 
-	addPattern(pattern: string): void {
-		console.log(pattern);
-		this.pattern = pattern;
+	addPattern(pattern: any) {
+		const resPattern = this.hashService.processPattern(pattern);
+		console.log(resPattern);
 	}
 
 	addTextGrid(gridInputs: string[]): void {
