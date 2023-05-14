@@ -20,6 +20,7 @@ export class PopupComponent implements OnInit {
 	currentModal = ''
 	hide = true;
 	generated: boolean = false;
+	showPassword = false;
 
 
 	constructor(
@@ -70,7 +71,14 @@ export class PopupComponent implements OnInit {
 		this.generated = true;
 	}
 
-	copyPassword() {
-		this.clipboard.copy(this.password);
+	togglePasswordVisibility(passwordInput: HTMLInputElement) {
+		this.showPassword = !this.showPassword;
+		passwordInput.type = this.showPassword ? 'text' : 'password';
 	}
+
+	copyPassword(passwordInput: HTMLInputElement) {
+		passwordInput.select();
+		document.execCommand('copy');
+	}
+
 }

@@ -15,8 +15,8 @@ export class DashboardComponent {
 	items = [
 		{ label: 'Pattern', checked: false },
 		{ label: 'Text Grid', checked: false },
-		// { label: 'Spotify', checked: true },
-		// { label: 'Webpage URL', checked: false }
+		{ label: 'Spotify', checked: false },
+		{ label: 'Webpage URL', checked: false }
 	];
 
 	onShowPopup(): void {
