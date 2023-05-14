@@ -16,28 +16,55 @@
 
 .Title, .parameters-title, button{
     color: rgba(192,154,102,255);
-    margin-top: 1.5rem;
-    margin-left: 1.5rem;
+    margin-top: 2.5rem;
+    margin-left: 2.5rem;
 }
 
 .Title{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 2rem;
+    font-size: 3.5rem;
     font-weight: bolder;
-}
-
-.parameters-title{
-    font-size: 1rem;
-    font-weight: 500;
     margin-bottom: 0.5rem;
 }
 
+.parameters-title{
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-bottom: 2.2rem;
+}
+
 .parameters-options{
-    margin-left: 0.875rem;
+    margin-left: 2.6rem;
+    margin-top: 1rem;
+}
+
+input[type="checkbox"] {
+    width: 35px;
+    height: 35px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+
+input[type='checkbox'] {
+    accent-color: rgba(255,175,197,255);
+}
+
+label{
+    vertical-align: middle;
 }
 
 button{
-    padding: 1.5rem;
+    padding: 1rem;
+    font-size: 1.2rem;
+    background-color: rgba(192,154,102,255);
+    color: beige;
+    border-radius: 10px;
+    border: none;
+}
+
+button:hover{
+    background-color: rgb(112, 75, 24);
 }
 
 .footer {

@@ -15,7 +15,6 @@ export class DashboardComponent {
 	items = [
 		{ label: 'Pattern', checked: false },
 		{ label: 'Grid text', checked: true },
-		{ label: 'AI Image', checked: false },
 		{ label: 'Spotify', checked: true },
 		{ label: 'Webpage URL', checked: false }
 	  ];
