@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { HashService } from 'src/app/services/hash.service';
 
 @Component({
@@ -6,18 +6,37 @@ import { HashService } from 'src/app/services/hash.service';
 	templateUrl: './popup.component.html',
 	styleUrls: ['./popup.component.scss'],
 })
-export class PopupComponent {
+export class PopupComponent implements OnInit {
+	@Input() selectedParams: any[] = [];
+	@Output() onClosePopup = new EventEmitter<void>();
+
 	private pattern: string = '';
 	private password: string = '';
 	private gridInputs: string[] = [];
-	allModals = 1
-	currentModal = 0;
+	activeModals: any[] = [];
+
+	currentModalId: number = 0;
+	currentModal = ''
 
 	constructor(private hashService: HashService) {}
 
+	ngOnInit(): void {
+		console.log(this.selectedParams)
+		if (this.selectedParams.length > 0) {
+			this.currentModal = this.selectedParams[0];
+		}
+	}
+
+	onClose(): void {
+		this.onClosePopup.emit();
+	}
+
+	isParam(label: string): boolean {
+		return this.selectedParams.includes(label);
+	}
+
 	addPattern(pattern: any) {
-		const resPattern = this.hashService.processPattern(pattern);
-		console.log(resPattern);
+		this.pattern = pattern;
 	}
 
 	addTextGrid(gridInputs: string[]): void {
@@ -26,15 +45,22 @@ export class PopupComponent {
 	}
 
 	onChangeModal(next: boolean): void {
-		if (next && this.currentModal < this.allModals) {
-			this.currentModal++;
+		if (next) {
+			this.currentModalId++;
+		} else {
+			this.currentModalId--;
 		}
-		else if (!next && this.currentModal > 0) {
-			this.currentModal--;
-		}
+		this.currentModal = this.selectedParams[this.currentModalId];
 	}
 
 	getHashedValue(): void {
-		this.password = this.hashService.hash('input params');
+		if (this.selectedParams.includes('Pattern')) {
+			this.password += this.hashService.processPattern(this.pattern);
+		}
+		if (this.selectedParams.includes('Text Grid')) {
+			this.password += this.hashService.processTextgrid(this.gridInputs);
+		}
+		console.log(this.password);
+		this.onClose();
 	}
 }
