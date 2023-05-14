@@ -1,0 +1,50 @@
+
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: url('https://img.freepik.com/free-vector/pink-watercolor-mountains-background_23-2149244828.jpg?w=1060&t=st=1684001174~exp=1684001774~hmac=d74cce14958ad9a4696239de97eafcb942b41724279ba1fd591349fafdc40d6e');
+    background-size: cover;
+    background-position: center;
+    min-height: 600px;
+	min-width: 400px;
+}
+
+.content {
+    height: 70%;
+}
+
+.Title, .parameters-title, button{
+    color: rgba(192,154,102,255);
+    margin-top: 1.5rem;
+    margin-left: 1.5rem;
+}
+
+.Title{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+.parameters-title{
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.parameters-options{
+    margin-left: 0.875rem;
+}
+
+button{
+    padding: 1.5rem;
+}
+
+.footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.image {
+    max-height: 100px;
+}

@@ -11,6 +11,10 @@ import { FormsModule } from '@angular/forms';
 import { TextgridComponent } from './components/textgrid/textgrid.component';
 import { PatternComponent } from './components/pattern/pattern.component';
 import { SpotifyComponent } from './components/spotify/spotify.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
 	declarations: [
@@ -26,6 +30,10 @@ import { SpotifyComponent } from './components/spotify/spotify.component';
 		AppRoutingModule,
 		FormsModule,
 		BrowserAnimationsModule,
+		MatCheckboxModule,
+		MatButtonModule,
+		MatIconModule,
+		MatInputModule
 	],
 	providers: [],
 	bootstrap: [AppComponent],

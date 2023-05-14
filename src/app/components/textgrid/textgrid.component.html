@@ -1,22 +1,35 @@
 <!-- app.component.html -->
-<div>
-	<h1>Input Fields</h1>
+
+	<h2 class="pattern-title">Pattern Lock</h2>
 	<div>
 		<div style="float: left; width: 50%">
-			<h3>Column 1:</h3>
-			<input type="text" [(ngModel)]="inputFields[0]" />
-			<input type="text" [(ngModel)]="inputFields[1]" />
-			<input type="text" [(ngModel)]="inputFields[2]" />
-			<input type="text" [(ngModel)]="inputFields[3]" />
+			<mat-form-field class="example-full-width">
+				<input matInput type="text" placeholder="Type anything" [(ngModel)]="inputFields[0]" />
+			</mat-form-field>
+			<mat-form-field class="example-full-width">
+				<input matInput type="text" placeholder="Type anything" [(ngModel)]="inputFields[1]" />
+			</mat-form-field>
+			<mat-form-field class="example-full-width">
+				<input matInput type="text" placeholder="Type anything" [(ngModel)]="inputFields[2]" />
+			</mat-form-field>
+			<mat-form-field class="example-full-width">
+				<input matInput type="text" placeholder="Type anything" [(ngModel)]="inputFields[3]" />
+			</mat-form-field>
 		</div>
 		<div style="float: left; width: 50%">
-			<h3>Column 2:</h3>
-			<input type="text" [(ngModel)]="inputFields[4]" />
-			<input type="text" [(ngModel)]="inputFields[5]" />
-			<input type="text" [(ngModel)]="inputFields[6]" />
-			<input type="text" [(ngModel)]="inputFields[7]" />
+			<mat-form-field class="example-full-width">
+				<input matInput type="text" placeholder="Type anything" [(ngModel)]="inputFields[4]" />
+			</mat-form-field>
+			<mat-form-field class="example-full-width">
+				<input matInput type="text" placeholder="Type anything" [(ngModel)]="inputFields[5]" />
+			</mat-form-field>
+			<mat-form-field class="example-full-width">
+				<input matInput type="text" placeholder="Type anything" [(ngModel)]="inputFields[6]" />
+			</mat-form-field>
+			<mat-form-field class="example-full-width">
+				<input matInput type="text" placeholder="Type anything" [(ngModel)]="inputFields[7]" />
+			</mat-form-field>
 		</div>
 		<div style="clear: both"></div>
 	</div>
-	<button (click)="logInputs()">Log Inputs</button>
-</div>
+

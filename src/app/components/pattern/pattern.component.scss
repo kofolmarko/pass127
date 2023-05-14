@@ -5,22 +5,37 @@
 	background-color: #fff;
 	padding: 10px;
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  }
+}
 
-  .pattern-lock-row {
+.pattern-lock-row {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-  }
+}
 
-  .pattern-lock-cell {
+.pattern-lock-cell {
 	width: 20px;
 	height: 20px;
 	border-radius: 50%;
 	border: 2px solid #ccc;
 	transition: background-color 0.2s ease;
-  }
+	margin: 5px;
+}
 
-  .pattern-lock-cell.selected {
+.pattern-lock-cell.selected {
 	background-color: #ccc;
-  }
+}
+
+.pattern-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.pattern-title {
+	font-size: 24px;
+	font-weight: bold;
+	text-align: center;
+	margin-top: 0;
+}

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { PopupComponent } from '../popup/popup.component';
 
 @Component({
 	selector: 'app-dashboard',
@@ -8,25 +7,23 @@ import { PopupComponent } from '../popup/popup.component';
 })
 export class DashboardComponent {
 
+	selectedParams: any[] = [];
 	showPopup: boolean = false;
 
 	constructor() {}
 
 	items = [
 		{ label: 'Pattern', checked: false },
-		{ label: 'Grid text', checked: true },
-		{ label: 'AI Image', checked: false },
-		{ label: 'Spotify', checked: true },
-		{ label: 'Webpage URL', checked: false }
-	  ];
+		{ label: 'Text Grid', checked: false },
+		// { label: 'Spotify', checked: true },
+		// { label: 'Webpage URL', checked: false }
+	];
 
-
-	selectedItems = this.items.filter((item) => item.checked);
-
-	openDialog(): void {
-		// const dialogRef = this.dialog.open(PopupComponent, {
-		//   width: '100%',
-		//   height: '100%'
-		// });
+	onShowPopup(): void {
+		const checkedItems = this.items.filter(item => item.checked);
+		this.selectedParams = checkedItems.map(item => item.label);
+		this.showPopup = true;
+		console.log(this.selectedParams)
 	}
+
 }

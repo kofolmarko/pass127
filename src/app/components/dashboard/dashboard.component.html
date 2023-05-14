@@ -1,27 +1,17 @@
-<!-- <button mat-button (click)="openDialog()">Open Popup</button> -->
-
 <div class="main">
 	<div class="content">
-		<div class="Title">{{ "title" }}</div>
+		<div class="Title">Capycode</div>
 		<div class="parameters">
-			<div class="parameters-title">Parameters</div>
-			<div *ngFor="let item of items">
+			<div class="parameters-title">Parameters:</div>
+			<div class="parameters-options" *ngFor="let item of items">
 				<label>
-					<input type="checkbox" [(ngModel)]="item.checked" />
-					{{ item.label }}
+					<mat-checkbox class="checkbox" (change)="item.checked = $event.checked">{{ item.label }}</mat-checkbox>
 				</label>
 			</div>
 		</div>
 		<div class="main-content">
-			<!-- Your page content here -->
-			<button (click)="showPopup = true">Show Popup</button>
-
-			<app-popup *ngIf="showPopup">
-				<!-- Your popup content here -->
-				<h2>Popup Title</h2>
-				<p>Popup content goes here.</p>
-				<button (click)="showPopup = false">Close</button>
-			</app-popup>
+			<button mat-raised-button color="accent" (click)="onShowPopup()">Generate password</button>
+			<app-popup *ngIf="showPopup" [selectedParams]="selectedParams" (onClosePopup)="showPopup = false"></app-popup>
 		</div>
 	</div>
 	<div class="footer">
