@@ -7,16 +7,31 @@ import { HashService } from 'src/app/services/hash.service';
 	styleUrls: ['./popup.component.scss'],
 })
 export class PopupComponent {
+	private pattern: string = '';
 	private password: string = '';
+	private gridInputs: string[] = [];
+	private allModals = 1
+	currentModal = 0;
 
 	constructor(private hashService: HashService) {}
 
-	addPattern(pattern: any) {
-		console.log(pattern)
+	addPattern(pattern: string): void {
+		console.log(pattern);
+		this.pattern = pattern;
 	}
 
-	addTextGrid(inputs: any) {
-		console.log(inputs)
+	addTextGrid(gridInputs: string[]): void {
+		console.log(gridInputs);
+		this.gridInputs = gridInputs;
+	}
+
+	onChangeModal(next: boolean): void {
+		if (next && this.currentModal < this.allModals) {
+			this.currentModal++;
+		}
+		else if (!next && this.currentModal > 0) {
+			this.currentModal--;
+		}
 	}
 
 	getHashedValue(): void {

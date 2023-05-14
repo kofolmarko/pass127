@@ -13,6 +13,7 @@ import { PatternComponent } from './components/pattern/pattern.component';
 import { SpotifyComponent } from './components/spotify/spotify.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
 	declarations: [
@@ -29,7 +30,8 @@ import { MatButtonModule } from '@angular/material/button';
 		FormsModule,
 		BrowserAnimationsModule,
 		MatCheckboxModule,
-		MatButtonModule
+		MatButtonModule,
+		MatIconModule
 	],
 	providers: [],
 	bootstrap: [AppComponent],

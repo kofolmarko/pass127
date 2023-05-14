@@ -3,9 +3,15 @@
 <div class="fullscreen-popup">
 	<div class="popup-background"></div>
 	<div class="popup-content">
-		<!-- <ng-content></ng-content> -->
-		<app-pattern (onComplete)="addPattern($event)"></app-pattern>
+		<app-pattern (onComplete)="addPattern($event)" *ngIf="currentModal===0"></app-pattern>
+		<app-textgrid (onComplete)="addTextGrid($event)" *ngIf="currentModal===1"></app-textgrid>
+		<div class="pattern-buttons">
+			<button mat-raised-button color="accent" (click)="onChangeModal(false)">
+				Previous
+			</button>
+			<button mat-raised-button color="accent" (click)="onChangeModal(true)">
+				Next
+			</button>
+		</div>
 	</div>
 </div>
-
-<!-- <app-textgrid (onComplete)="addTextGrid($event)"></app-textgrid> -->

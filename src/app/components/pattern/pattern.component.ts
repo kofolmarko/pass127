@@ -24,13 +24,13 @@ export class PatternComponent {
 			if (!this.selectedCells.includes(cellNumber)) {
 				this.selectedCells.push(cellNumber);
 			}
+			console.log(this.selectedCells);
 		}
 	}
 
 	onCellUp(): void {
 		this.isMouseDown = false;
 		this.onComplete.emit(this.selectedCells.join('-'));
-		this.selectedCells = [];
 	}
 
 	isSelected(row: number, col: number): boolean {
@@ -39,5 +39,9 @@ export class PatternComponent {
 
 	getCellNumber(row: number, col: number): number {
 		return row * 3 + col + 1;
+	}
+
+	onReset(): void {
+		this.selectedCells = [];
 	}
 }
