@@ -2,18 +2,17 @@
 
 <div class="main">
 	<div class="content">
-		<div class="Title">{{ "title" }}</div>
+		<div class="Title">Capycode</div>
 		<div class="parameters">
-			<div class="parameters-title">Parameters</div>
-			<div *ngFor="let item of items">
+			<div class="parameters-title">Parameters:</div>
+			<div class="parameters-options" *ngFor="let item of items">
 				<label>
-					<mat-checkbox class="checkbox" >Grid text</mat-checkbox>
-					{{ item.label }}
+					<mat-checkbox class="checkbox" >{{ item.label }}</mat-checkbox>
 				</label>
 			</div>
 		</div>
 		<div class="main-content">
-			<button mat-raised-button color="accent" (click)="showPopup = true">Show Popup</button>
+			<button mat-raised-button color="accent" (click)="showPopup = true">Generate password</button>
 
 			<app-popup *ngIf="showPopup">
 				<h2>Popup Title</h2>
