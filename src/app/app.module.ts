@@ -14,6 +14,7 @@ import { SpotifyComponent } from './components/spotify/spotify.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
 	declarations: [
@@ -31,7 +32,8 @@ import { MatIconModule } from '@angular/material/icon';
 		BrowserAnimationsModule,
 		MatCheckboxModule,
 		MatButtonModule,
-		MatIconModule
+		MatIconModule,
+		MatInputModule
 	],
 	providers: [],
 	bootstrap: [AppComponent],

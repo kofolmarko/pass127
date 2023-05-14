@@ -10,7 +10,7 @@ export class PopupComponent {
 	private pattern: string = '';
 	private password: string = '';
 	private gridInputs: string[] = [];
-	private allModals = 1
+	allModals = 1
 	currentModal = 0;
 
 	constructor(private hashService: HashService) {}

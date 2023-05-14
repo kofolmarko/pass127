@@ -3,14 +3,17 @@
 <div class="fullscreen-popup">
 	<div class="popup-background"></div>
 	<div class="popup-content">
-		<app-pattern (onComplete)="addPattern($event)" *ngIf="currentModal===0"></app-pattern>
-		<app-textgrid (onComplete)="addTextGrid($event)" *ngIf="currentModal===1"></app-textgrid>
+		<app-pattern (onComplete)="addPattern($event)" [ngStyle]="{'display': currentModal===0 ? 'block' : 'none'}"></app-pattern>
+		<app-textgrid (onComplete)="addTextGrid($event)" [ngStyle]="{'display': currentModal===1 ? 'block' : 'none'}"></app-textgrid>
 		<div class="pattern-buttons">
-			<button mat-raised-button color="accent" (click)="onChangeModal(false)">
+			<button mat-raised-button color="accent" [disabled]="currentModal===0" (click)="onChangeModal(false)">
 				Previous
 			</button>
-			<button mat-raised-button color="accent" (click)="onChangeModal(true)">
+			<button mat-raised-button color="accent" (click)="onChangeModal(true)" *ngIf="currentModal < allModals">
 				Next
+			</button>
+			<button mat-raised-button color="primary" (click)="getHashedValue()" *ngIf="currentModal === allModals">
+				Generate
 			</button>
 		</div>
 	</div>
