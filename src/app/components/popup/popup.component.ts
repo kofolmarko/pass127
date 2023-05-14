@@ -13,6 +13,8 @@ export class PopupComponent {
 
 	addPattern(pattern: any) {
 		console.log(pattern)
+		const resPattern = this.hashService.processPattern(pattern);
+		console.log(resPattern);
 	}
 
 	addTextGrid(inputs: any) {
