@@ -4,6 +4,8 @@
 	"description": "Friendliest animal alive protects you against hackers.\nA multimodal password generator and inputer. Use simple modals to generate complex passwords.",
 	"version": "1.0",
 	"icons": {
+		"16": "assets/images/CapyIcon.png"
+
 	},
 	"action": {
 	  "default_popup": "index.html"
