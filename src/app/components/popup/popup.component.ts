@@ -16,7 +16,11 @@ export class PopupComponent {
 	}
 
 	addTextGrid(inputs: any) {
-		console.log(inputs)
+		console.log(inputs+'inputs')
+		console.log(this.hashService.fillBlanks(inputs));
+		const resTextGrid = this.hashService.processTextgrid(inputs);
+		console.log(resTextGrid);
+
 	}
 
 	getHashedValue(): void {
