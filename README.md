@@ -37,3 +37,19 @@ In the final version of the application, we plan to introduce additional options
 It's worth noting that we developed the password generation algorithms from scratch instead of relying on existing libraries. We focused on ensuring that the original inputs cannot be easily inferred from the resulting passwords. This was achieved by encoding each character in the password using the previous character and an index/permutation.
 
 For the encoding process of the "grid inputs" section of the password, we employed a more complex algorithm. It generates a unique permutation of all the allowed characters for password generation based on the positions of non-empty text fields. To increase the complexity of the password, we replace empty fields with the word "empty" in different languages. Then, for each character in the grid, we shift it one position to the right in the generated permutation. By referencing the original text, we determine the value of the new character based on its position in the permuted string. This process is repeated for all characters in the grid. To avoid repeating passwords that contain consecutively entered words in different fields, we incorporate the length of the currently processed input field into the shifting index.
+
+## Run the extention
+
+The extension was developed using the Anguar framework.
+
+Run the extension:
+
+Install requiremenst for running Angular https://angular.io/start
+Run npm -i
+To run like a web app run ng serve
+To run as a Chrome extension run: ng build
+Go to Google Chrome and type: chrome://extensions
+Enable developer mode
+Click load unpacked
+Navigate to built Angular project (dist -> pass127) and upload
+Extension should be installed
