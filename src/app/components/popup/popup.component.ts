@@ -27,13 +27,6 @@ export class PopupComponent implements OnInit {
 		}
 	}
 
-	addTextGrid(inputs: any) {
-		console.log(inputs+'inputs')
-		console.log(this.hashService.fillBlanks(inputs));
-		const resTextGrid = this.hashService.processTextgrid(inputs);
-		console.log(resTextGrid);
-	}
-
 	onClose(): void {
 		this.onClosePopup.emit();
 	}
@@ -43,11 +36,13 @@ export class PopupComponent implements OnInit {
 	}
 
 	addPattern(pattern: any) {
-		const resPattern = this.hashService.processPattern(pattern);
-		console.log(resPattern);
+		this.pattern = pattern;
 	}
 
-
+	addTextGrid(gridInputs: string[]): void {
+		console.log(gridInputs);
+		this.gridInputs = gridInputs;
+	}
 
 	onChangeModal(next: boolean): void {
 		if (next) {
@@ -59,8 +54,13 @@ export class PopupComponent implements OnInit {
 	}
 
 	getHashedValue(): void {
-		console.log(this.currentModalId)
+		if (this.selectedParams.includes('Pattern')) {
+			this.password += this.hashService.processPattern(this.pattern);
+		}
+		if (this.selectedParams.includes('Text Grid')) {
+			this.password += this.hashService.processTextgrid(this.gridInputs);
+		}
+		console.log(this.password);
 		this.onClose();
-		this.password = this.hashService.hash('input params');
 	}
 }
