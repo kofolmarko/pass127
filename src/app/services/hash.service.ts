@@ -59,7 +59,7 @@ export class HashService {
 
 		// Set the seed for the random number generator
 		const seed = 127;
-		const random = seedrandom(seed);
+		let random = seedrandom(seed);
 
 		while (mixedStrings.length < 256) {
 			const shuffledArr = charactersArr.sort(() => random() - 0.5);
